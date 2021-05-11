@@ -66,25 +66,23 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
-    "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
-static const char *termcmd[]        = {"st", NULL};
-static const char *alacrittycmd[]   = {"alacritty", NULL};
-static const char *fcitx5cmd[]      = {"fcitx5", NULL};
-static const char *thunderbirdcmd[] = {"thunderbird", NULL};
-static const char *clipmenucmd[]    = {"/usr/bin/clipmenu", NULL};
-static const char *qutebroswercmd[] = {"qutebroswer", NULL};
+    "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL } ;
+static const char *termcmd[]        = {"st", NULL                          } ;
+static const char *alacrittycmd[]   = {"alacritty", NULL                   } ;
+static const char *fcitx5cmd[]      = {"fcitx5", NULL                      } ;
+static const char *thunderbirdcmd[] = {"thunderbird", NULL                 } ;
+static const char *clipmenucmd[]    = {"/usr/bin/clipmenu", NULL           } ;
+static const char *qutebroswercmd[] = {"qutebroswer", NULL                 } ;
 static const char *browsercmd[] = {
     "google-chrome-stable", "--proxy-server=http://127.0.0.1:7890", NULL};
 
-static const char *upvol[]         = {"/home/omega/.local/bin/vol-up.sh", NULL};
-static const char *downvol[]       = {"/home/omega/.local/bin/vol-down.sh", NULL};
-static const char *mutevol[]       = {"/home/omega/.local/bin/vol-toggle.sh", NULL};
-
-static const char *suspendcmd[]    = {"/home/omega/.local/bin/suspend.sh", NULL};
-static const char *hibernatecmd[]  = {"/home/omega/.local/bin/hibernate.sh", NULL};
-
-static const char *screenkeycmd[]  = {"/home/omega/.local/bin/sck-tog.sh", NULL};
-static const char *screenshotcmd[] = {"/home/omega/.local/bin/screenshot.sh", NULL};
+static const char *upvol[]         = {"/home/omega/.local/bin/vol-up.sh", NULL     } ;
+static const char *downvol[]       = {"/home/omega/.local/bin/vol-down.sh", NULL   } ;
+static const char *mutevol[]       = {"/home/omega/.local/bin/vol-toggle.sh", NULL } ;
+static const char *suspendcmd[]    = {"/home/omega/.local/bin/suspend.sh", NULL    } ;
+static const char *hibernatecmd[]  = {"/home/omega/.local/bin/hibernate.sh", NULL  } ;
+static const char *screenkeycmd[]  = {"/home/omega/.local/bin/sck-tog.sh", NULL    } ;
+static const char *screenshotcmd[] = {"/home/omega/.local/bin/screenshot.sh", NULL } ;
 
 // static const char *monbrightnessup[] = {
 // "/home/omega/.local/bin/monbrightnessup.sh", NULL }; static const char
@@ -96,7 +94,7 @@ static Key keys[] = {
     {MODKEY             , XK_z                    , spawn          , {.v = dmenucmd}}       ,
     {MODKEY             , XK_Return               , spawn          , {.v = termcmd}}        ,
     {MODKEY             , XK_y                    , spawn          , {.v = alacrittycmd}}   ,
-    {MODKEY             , XK_c                    , spawn          , {.v = fcitx5cmd}}      ,
+    {MODKEY | ShiftMask , XK_n                    , spawn          , {.v = fcitx5cmd}}      ,
     {MODKEY             , XK_v                    , spawn          , {.v = clipmenucmd}}    ,
     {MODKEY             , XK_g                    , spawn          , {.v = browsercmd}}     ,
     {MODKEY | ShiftMask , XK_g                    , spawn          , {.v = qutebroswercmd}} ,
